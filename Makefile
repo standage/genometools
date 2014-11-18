@@ -41,7 +41,8 @@ ifneq ($(cairo),no)
 	INCLUDEOPT+=$(shell pkg-config --silence-errors --cflags-only-I pango) \
 	            $(shell pkg-config --silence-errors --cflags-only-I cairo) \
 	            $(shell pkg-config --silence-errors --cflags-only-I pangocairo) \
-	            $(shell pkg-config --silence-errors --cflags-only-I glib-2.0)
+	            $(shell pkg-config --silence-errors --cflags-only-I glib-2.0) \
+		    -I /usr/local/Cellar/cairo/1.14.0/include/cairo
   endif
 endif
 
