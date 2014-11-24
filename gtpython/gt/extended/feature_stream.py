@@ -21,11 +21,13 @@
 from gt.dlload import gtlib
 from gt.annotationsketch.feature_index import FeatureIndex
 from gt.extended.genome_stream import GenomeStream
+import sys
 
 
 class FeatureStream(GenomeStream):
 
     def __init__(self, genome_stream, feature_index):
+        print >> sys.stderr, "DEBUG feature_stream.py:feature_index=" + hex(feature_index._as_parameter_)
         self.gs = gtlib.gt_feature_stream_new(genome_stream._as_parameter_,
                 feature_index._as_parameter_)
         self._as_parameter_ = self.gs

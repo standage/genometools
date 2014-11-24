@@ -22,5 +22,6 @@
 
 GtNodeStream* gt_feature_stream_new(GtNodeStream *in_stream, GtFeatureIndex *fi)
 {
+fprintf(stderr, "DEBUG feature_stream.c:gt_feature_stream_new fi=%p\n", fi);
   return gt_visitor_stream_new(in_stream, gt_feature_visitor_new(fi));
 }

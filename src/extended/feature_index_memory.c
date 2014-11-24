@@ -388,6 +388,7 @@ GtFeatureIndex* gt_feature_index_memory_new(void)
   GtFeatureIndexMemory *fim;
   GtFeatureIndex *fi;
   fi = gt_feature_index_create(gt_feature_index_memory_class());
+fprintf(stderr, "DEBUG feature_index_memory.c:gt_feature_index_memory_new=%p\n", fi);
   fim = gt_feature_index_memory_cast(fi);
   fim->nof_nodes = 0;
   fim->regions = gt_hashmap_new(GT_HASH_STRING, NULL,

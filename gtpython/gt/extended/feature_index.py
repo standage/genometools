@@ -24,6 +24,7 @@ from gt.core.error import Error, gterror
 from gt.core.gtrange import Range
 from gt.core.str_array import StrArray
 from gt.extended.feature_node import FeatureNode
+import sys
 
 
 class FeatureIndex:
@@ -154,6 +155,7 @@ class FeatureIndexMemory(FeatureIndex):
 
     def __init__(self):
         self.fi = gtlib.gt_feature_index_memory_new()
+        print >> sys.stderr, "DEBUG feature_index.py:self.fi=" + hex(self.fi)
         self._as_parameter_ = self.fi
 
     def from_param(cls, obj):

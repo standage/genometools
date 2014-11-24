@@ -80,6 +80,7 @@ GtNodeVisitor* gt_feature_visitor_new(GtFeatureIndex *fi)
   gt_assert(fi != NULL);
   gv = gt_node_visitor_create(gt_feature_visitor_class());
   feature_visitor = feature_visitor_cast(gv);
+fprintf(stderr, "DEBUG feature_visitor:gt_feature_visitor_new fi=%p\n", fi);
   feature_visitor->feature_index = gt_feature_index_ref(fi);
   gt_assert(feature_visitor != NULL);
   return gv;
